@@ -3,7 +3,7 @@ services:
   - type: web
     name: coursealign-api
     env: python
-    region: oregon
+    region: ohio
     plan: free
     branch: main
     buildCommand: pip install -r requirements.txt
