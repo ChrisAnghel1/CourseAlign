@@ -1,0 +1,21 @@
+# Render Deployment Configuration
+services:
+  - type: web
+    name: coursealign-api
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: COURSEALIGN_API_SECRET
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.12.0
+    disk:
+      name: coursealign-indexes
+      mountPath: /opt/render/project/src/indexes
+      sizeGB: 1

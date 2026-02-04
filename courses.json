@@ -1,0 +1,22 @@
+{
+  "CP312": {
+    "textbook_filename": "Textbook.pdf",
+    "index_path": "indexes/CP312"
+  },
+  "CP372": {
+    "textbook_filename": "Textbook.pdf",
+    "index_path": "indexes/CP372"
+  },
+  "CP373": {
+    "textbook_filename": "Textbook.pdf",
+    "index_path": "indexes/CP373"
+  },
+  "CP216": {
+    "textbook_filename": "Textbook.pdf",
+    "index_path": "indexes/CP216"
+  },
+  "CP468": {
+    "textbook_filename": "Textbook.pdf",
+    "index_path": "indexes/CP468"
+  }
+}
