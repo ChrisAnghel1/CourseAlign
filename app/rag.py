@@ -54,27 +54,3 @@ class RAGRetriever:
                 results.append(chunk)
         
         return results
-    
-    def format_chunks_for_prompt(self, chunks: List[Dict[str, Any]]) -> str:
-        """
-        Format retrieved chunks for inclusion in prompt.
-        
-        Args:
-            chunks: List of chunk dicts
-            
-        Returns:
-            Formatted string for prompt
-        """
-        formatted_chunks = []
-        
-        for chunk in chunks:
-            page_info = f"Pages {chunk['page_start']}-{chunk['page_end']}" if chunk['page_start'] != chunk['page_end'] else f"Page {chunk['page_start']}"
-            
-            formatted_chunk = f"""
---- CHUNK {chunk['rank']} ---
-{page_info}
-Text: {chunk['text'][:800]}{'...' if len(chunk['text']) > 800 else ''}
-"""
-            formatted_chunks.append(formatted_chunk)
-        
-        return "\n".join(formatted_chunks)

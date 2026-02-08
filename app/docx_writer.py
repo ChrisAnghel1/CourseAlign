@@ -143,32 +143,3 @@ class DOCXWriter:
             else:
                 # Regular text
                 paragraph.add_run(part)
-    
-    def create_simple_docx(self, title: str, content: str) -> bytes:
-        """
-        Create a simple DOCX with title and content.
-        
-        Args:
-            title: Document title
-            content: Document content
-            
-        Returns:
-            DOCX file as bytes
-        """
-        doc = Document()
-        
-        # Add title
-        doc.add_heading(title, level=0)
-        
-        # Add content
-        paragraphs = content.split('\n\n')
-        for para_text in paragraphs:
-            if para_text.strip():
-                doc.add_paragraph(para_text.strip())
-        
-        # Save to bytes
-        docx_bytes = BytesIO()
-        doc.save(docx_bytes)
-        docx_bytes.seek(0)
-        
-        return docx_bytes.getvalue()
