@@ -1,9 +1,19 @@
 """Test script for CourseAlign API."""
 import requests
 import sys
+import os
+from dotenv import load_dotenv
 
-API_URL = "http://127.0.0.1:8000"
-API_TOKEN = "coursealign_TmN3noCYfEdXdZZ667SiMwGCym1AUrb0jVSyRH6oSA"
+# Load environment variables
+load_dotenv()
+
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
+API_TOKEN = os.getenv("COURSEALIGN_API_SECRET")
+
+if not API_TOKEN:
+    print("ERROR: COURSEALIGN_API_SECRET not found in environment variables")
+    print("Please set it in your .env file or export it")
+    sys.exit(1)
 
 def test_health():
     """Test health endpoint."""
