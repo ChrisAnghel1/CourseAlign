@@ -39,7 +39,7 @@ pyvenv.cfg
 *~
 
 # Indexes and data
-indexes/*/
+indexes/
 !indexes/.gitkeep
 
 # OS
